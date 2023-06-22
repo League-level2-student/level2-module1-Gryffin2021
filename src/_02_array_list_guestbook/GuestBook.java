@@ -1,6 +1,12 @@
 package _02_array_list_guestbook;
 
-public class GuestBook {
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.*;
+
+public class GuestBook implements ActionListener {
 	// Create a GUI with two buttons. One button reads "Add Name" and the other button reads "View Names". 
 	// When the add name button is clicked, display an input dialog that asks the user to enter a name. Add
 	// that name to an ArrayList. When the "View Names" button is clicked, display a message dialog that displays
@@ -9,4 +15,38 @@ public class GuestBook {
 	// Guest #2: Sandy Summers
 	// Guest #3: Greg Ganders
 	// Guest #4: Donny Doners
+	JFrame frame = new JFrame();
+	JPanel panel = new JPanel();
+	JButton button = new JButton();
+	JButton button1 = new JButton();
+	public static void main(String[] args) {
+		GuestBook GB = new GuestBook();
+		GB.run();
+	}
+	public GuestBook() {
+		
+	}
+	public void run() {
+		frame.add(panel);
+		panel.add(button);
+		button.setText("Add Name");
+		button.addActionListener(this);
+		panel.add(button1);
+		button1.setText("View Names");
+		button1.addActionListener(this);
+		panel.setLayout(new GridLayout(2, 1));
+		frame.setSize(200, 100);
+		frame.setVisible(true);	
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		JButton buttonClicked = (JButton)e.getSource();
+		if(e.getSource() == button) {
+			
+		}else if(e.getSource() == button1) {
+			
+		}
+	}
 }
